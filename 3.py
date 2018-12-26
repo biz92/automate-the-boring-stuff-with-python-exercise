@@ -4,7 +4,13 @@ def collatz(number):
         return 3 * number + 1
     else:
         return number // 2
-r = int(input())
+
+try:
+    r = int(input())
+except ValueError:
+    print("Once again enter an integer!")
+    r = int(input())
+
 while r > 1:
         r = collatz(r)
         print(r)
